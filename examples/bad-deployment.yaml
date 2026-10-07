@@ -1,0 +1,13 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo
+spec:
+  template:
+    spec:
+      containers:
+        - name: app
+          image: myapp            # no tag → :latest
+          env:
+            - name: API_KEY
+              value: sk-not-a-secret-please   # plaintext secret
